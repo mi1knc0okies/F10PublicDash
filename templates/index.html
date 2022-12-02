@@ -39,8 +39,37 @@
     </div>
 
     <div class="iframe">
-        <iframe class="iframe-content" src="https://form10group.brightgauge.co/public/dashboards/bea0d750-0b9e-49cf-bc0d-71c569df05af" name="iframe"></iframe>
+        <iframe id="iframe-content" class="iframe-content" src="https://form10group.brightgauge.co/public/dashboards/bea0d750-0b9e-49cf-bc0d-71c569df05af/" name="iframe"></iframe>
     </div>
 
 </body>
+<SCRIPT>
+    const links = ["https://form10group.brightgauge.co/public/dashboards/bea0d750-0b9e-49cf-bc0d-71c569df05af/", /* Monthly Closed Ticket KPI */
+        "https://form10group.brightgauge.co/public/dashboards/43541bdc-badc-4c55-b83f-217675d66140/", /* OK NTT - Low Volume Tickets */
+        "https://form10group.brightgauge.co/public/dashboards/dcdbd6a2-6e71-4d48-aa76-9f5723ffc294/", /* OK NTT - Projects */
+        "https://form10group.brightgauge.co/public/dashboards/675c0d21-22c0-4d1d-a63d-ad6b0ef71742/", /* OK NTT - Upcoming Scheduled Installs */
+        "https://form10group.brightgauge.co/public/dashboards/117918e1-a0d9-437d-8ab9-1f90d8600e98/", /* ITI */
+        "https://form10group.brightgauge.co/public/dashboards/74c607fa-4fbf-43de-8c20-0d9c532126c8/", /* Form 10 Projects */
+        "https://form10group.brightgauge.co/public/dashboards/8efc4c20-07a9-4456-bc9f-a5c4027b0166/", /* Service Tickets */
+        "https://form10group.brightgauge.co/public/dashboards/c9dde8cd-b950-4b97-9626-6559eb7ab49a/", /* Complete Overview */
+        "https://form10group.brightgauge.co/public/dashboards/3229b72a-5a76-417a-be0c-29fc2a4b5b5c/", /* Bloomington Dash */
+        "https://form10group.brightgauge.co/public/dashboards/4e94ee0f-0559-4e94-adfe-7206ddbd898f/", /* Anaheim Dash */
+        "https://form10group.brightgauge.co/public/dashboards/192ae4bf-5e68-4bc3-ac27-fc63973a4c04/", /* Bloomington – Outstanding Returns */
+        "https://form10group.brightgauge.co/public/dashboards/c89b1b05-044d-4553-96bb-b4a76025f252/", /* Anaheim – Outstanding Returns */
+        "https://form10group.brightgauge.co/public/dashboards/d807d06a-1336-48f3-877c-874f742078d0/", /* All Outsanding Returns */
+    ]
+
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+    async function changeIframe(links) {
+        for (let i = 0; i < links.length; i++) {
+            console.log(links[i])
+            document.getElementById("iframe-content").src = links[i]
+            await sleep(30 * 1000)
+        }
+    }
+    changeIframe(links);
+</SCRIPT>
 </html>
+
