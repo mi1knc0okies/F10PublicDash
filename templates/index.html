@@ -64,7 +64,7 @@
     }
     async function changeIframe(links) {
         while (true){
-            for (let i = 0; i < links.length;) {
+            for (let i = 0; i < links.length; i++){
                 console.log(links[i])
                 document.getElementById("iframe-content").src = links[i]
                 await sleep(30 * 1000)
